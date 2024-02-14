@@ -1,0 +1,18 @@
+%Gibbs Phenomenon
+clc;
+clear all;
+close all;
+N=input('enter the number of harmonics'); #Declaration of Harmonics
+t=0:0.001:1; #Time Period
+y=square(2*pi*t); #Square wave
+plot(t,y,'linewidth',2);
+hold;
+sq=zeros(size(t));
+for n=1:2:N
+sq1=sq+(4/(pi*n)*sin(2*pi*n*t)); #Sine wave
+end;
+plot(t,sq1);
+grid;
+xlabel('time');
+ylabel('Magnitude');
+title('Synthesized square wave using fourier series')
